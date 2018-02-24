@@ -6,6 +6,7 @@ You can visit http://13.58.46.134/ for the website deployed.
 
 # Tasks
 ## Launch your Virtual Machine with your Udacity account
+```
 Follow the instructions provided to SSH into your server
 
 Create a new user named grader
@@ -20,19 +21,22 @@ Configure the Uncomplicated Firewall (UFW) to only allow incoming connections fo
 (port 123)
 
 Configure the local timezone to UTC
+```
 
-Install and configure Apache to serve a Python mod_wsgi application
+## Install and configure Apache to serve a Python mod_wsgi application
 
 ### Install and configure PostgreSQL:
+```
 Do not allow remote connections
 
 Create a new user named catalog that has limited permissions to your catalog application database
 
 Install git, clone and setup your Catalog App project (from your GitHub repository from earlier in the Nanodegree program) so that it functions correctly when visiting your server’s IP address in a browser. Remember to set this up appropriately so that your .git directory is not publicly accessible via a browser!
+```
 
 ### Launch Virtual Machine
-Instructions for SSH access to the instance
-
+#### Instructions for SSH access to the instance
+```
 Download Private Key below
 
 Move the private key file into the folder ~/.ssh (where ~ is your environment's home directory). So if you downloaded the file to the Downloads folder, just execute the following command in your terminal. mv ~/Downloads/udacity_key.rsa ~/.ssh/
@@ -56,11 +60,11 @@ touch /etc/sudoers.d/grader
 vim /etc/sudoers.d/grader, type in grader ALL=(ALL:ALL) ALL, save and quit
 Set ssh login using keys
 generate keys on local machine usingssh-keygen ; then save the private key in ~/.ssh on local machine
-
-deploy public key on developement enviroment
+```
+## deploy public key on developement enviroment
 
 On you virtual machine:
-
+```
 $ su - grader
 $ mkdir .ssh
 $ touch .ssh/authorized_keys
@@ -70,7 +74,7 @@ Copy the public key generated on your local machine to this file and save
 $ chmod 700 .ssh
 $ chmod 644 .ssh/authorized_keys
 reload SSH using service ssh restart
-
+```
 now you can use ssh to login with the new user you created
 
 ssh -i [privateKeyFilename] grader@52.24.125.52
