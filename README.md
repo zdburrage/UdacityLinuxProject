@@ -141,7 +141,7 @@ Configure and Enable a New Virtual Host
 Create FlaskApp.conf to edit: sudo nano /etc/apache2/sites-available/FlaskApp.conf
 
 Add the following lines of code to the file to configure the virtual host.
-
+```
 <VirtualHost *:80>
 	ServerName 52.24.125.52
 	ServerAdmin qiaowei8993@gmail.com
@@ -160,14 +160,14 @@ Add the following lines of code to the file to configure the virtual host.
 	CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 Enable the virtual host with the following command: sudo a2ensite FlaskApp
-
+```
 Create the .wsgi File
 Create the .wsgi File under /var/www/FlaskApp:
 
 cd /var/www/FlaskApp
 sudo nano flaskapp.wsgi 
 Add the following lines of code to the flaskapp.wsgi file:
-
+,,,
 #!/usr/bin/python
 import sys
 import logging
@@ -178,5 +178,7 @@ from FlaskApp import app as application
 application.secret_key = 'Add your secret key'
 Restart Apache
 Restart Apache sudo service apache2 restart
-References:
+,,,
+
+# References:
 https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
