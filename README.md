@@ -78,7 +78,7 @@ reload SSH using service ssh restart
 now you can use ssh to login with the new user you created
 
 ssh -i [privateKeyFilename] grader@52.24.125.52
-
+```
 Update all currently installed packages
 sudo apt-get update
 sudo apt-get upgrade
@@ -101,7 +101,7 @@ Install mod_wsgi sudo apt-get install python-setuptools libapache2-mod-wsgi
 Restart Apache sudo service apache2 restart
 Install and configure PostgreSQL
 Install PostgreSQL sudo apt-get install postgresql
-
+```
 Check if no remote connections are allowed sudo vim /etc/postgresql/9.3/main/pg_hba.conf
 
 Login as user "postgres" sudo su - postgres
