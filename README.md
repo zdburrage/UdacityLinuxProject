@@ -143,15 +143,15 @@ Create FlaskApp.conf to edit: sudo nano /etc/apache2/sites-available/FlaskApp.co
 Add the following lines of code to the file to configure the virtual host.
 ```
 <VirtualHost *:80>
-	ServerName 52.24.125.52
-	ServerAdmin qiaowei8993@gmail.com
+	ServerName 13.58.46.134
+	ServerAdmin zac.burrage@gmail.com
 	WSGIScriptAlias / /var/www/FlaskApp/flaskapp.wsgi
-	<Directory /var/www/FlaskApp/FlaskApp/>
+	<Directory /var/www/FlaskApp/SkillsCatalogApp/>
 		Order allow,deny
 		Allow from all
 	</Directory>
-	Alias /static /var/www/FlaskApp/FlaskApp/static
-	<Directory /var/www/FlaskApp/FlaskApp/static/>
+	Alias /static /var/www/FlaskApp/SkillsCatalogApp/static
+	<Directory /var/www/FlaskApp/SkillsCatalogApp/static/>
 		Order allow,deny
 		Allow from all
 	</Directory>
@@ -159,6 +159,7 @@ Add the following lines of code to the file to configure the virtual host.
 	LogLevel warn
 	CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
+```
 Enable the virtual host with the following command: sudo a2ensite FlaskApp
 ```
 Create the .wsgi File
@@ -167,7 +168,8 @@ Create the .wsgi File under /var/www/FlaskApp:
 cd /var/www/FlaskApp
 sudo nano flaskapp.wsgi 
 Add the following lines of code to the flaskapp.wsgi file:
-,,,
+```
+```
 #!/usr/bin/python
 import sys
 import logging
