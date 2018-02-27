@@ -139,7 +139,7 @@ Install psycopg2 sudo apt-get -qqy install postgresql python-psycopg2
 ## Create database schema sudo python database_setup.py
 ### Configure and Enable a New Virtual Host
 Create FlaskApp.conf to edit: sudo nano /etc/apache2/sites-available/FlaskApp.conf
-,,,
+```
 
 Add the following lines of code to the file to configure the virtual host.
 ```
