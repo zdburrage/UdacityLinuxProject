@@ -119,9 +119,9 @@ Give user "catalog" permission to "catalog" application database
 
 postgres=# GRANT ALL PRIVILEGES ON DATABASE catalog TO catalog;
 Quit postgreSQL postgres=# \q
-
+```
 Exit from user "postgres"
-,,,
+
 exit
 Install git, clone and setup your Catalog App project.
 Install Git using sudo apt-get install git
