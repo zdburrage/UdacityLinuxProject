@@ -4,6 +4,22 @@ In this project, a Linux virtual machine needs to be configurated to support the
 
 You can visit http://13.58.46.134/ for the website deployed.
 
+# How To Access the Server as Grader
+```
+Copy and Paste the RSA Key attached in the grader notes into a new file and name it whatever you like
+
+make sure to save the file as .rsa
+
+locate wherever you saved your file from command line/terminal
+
+type chmod 700 <NameofKeyFile>.rsa
+
+To SSH in, type ssh grader@13.58.46.134 -i <NameofKeyFile>.rsa -p 2200
+
+```
+
+## Summary of things I did to the server
+
 # Tasks
 ## Launch your Virtual Machine with your Udacity account
 ```
@@ -34,25 +50,6 @@ Create a new user named catalog that has limited permissions to your catalog app
 Install git, clone and setup your Catalog App project (from your GitHub repository from earlier in the Nanodegree program) so that it functions correctly when visiting your server’s IP address in a browser. Remember to set this up appropriately so that your .git directory is not publicly accessible via a browser!
 ```
 
-### Launch Virtual Machine
-#### Instructions for SSH access to the instance
-```
-Download Private Key below
-
-Move the private key file into the folder ~/.ssh (where ~ is your environment's home directory). So if you downloaded the file to the Downloads folder, just execute the following command in your terminal. mv ~/Downloads/udacity_key.rsa ~/.ssh/
-
-Open your terminal and type in chmod 600 ~/.ssh/udacity_key.rsa
-
-In your terminal, type in ssh -i ~/.ssh/udacity_key.rsa root@52.24.125.52
-
-Development Environment Information
-
-Public IP Address
-
-13.58.46.134
-
-Private Key ( is not provided here. )
-
 Create a new user named grader
 sudo adduser grader
 vim /etc/sudoers
@@ -77,7 +74,7 @@ reload SSH using service ssh restart
 ```
 now you can use ssh to login with the new user you created
 
-ssh -i [privateKeyFilename] grader@52.24.125.52
+ssh -i [privateKeyFilename] grader@13.58.46.134
 ```
 Update all currently installed packages
 sudo apt-get update
